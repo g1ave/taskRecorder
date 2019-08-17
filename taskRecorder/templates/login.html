@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <hr>
+    <div class="container text-center my-auto" style="height: 100%">
+    <h3>Login</h3>
+        <hr>
+        <form action="/login" method="post">
+            <div class="form-group">
+{#                {{ login_form.username.label }}#}
+            <div class="username">
+{#                <span class="input-group-text">username</span>#}
+                {{ login_form.username }}
+            </div>
+
+{#                {{ login_form.password.label }}#}
+                {{ login_form.password }}
+
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-warning my-2" role="alert">{{ message }}</div>
+                {% endfor %}
+
+                <div class="mt-2">
+                    {{ login_form.login }}
+                    <a href="/register"> <button type="button" class=" mt-2 form-control">New user? Please sign up!</button></a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <hr>
+{% endblock %}

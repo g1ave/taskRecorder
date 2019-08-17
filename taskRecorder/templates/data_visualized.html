@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <hr>
+    <div class="container text-center my-auto" style="height: 100%">
+    <h3>Project time usage</h3>
+        <hr>
+        {{ time_usage | safe }}
+    </div>
+    <hr>
+{% endblock %}

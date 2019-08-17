@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container text-center my-auto">
+    <hr>
+    <h3>project - {{ project.project_name }}</h3>
+    <hr>
+    <table class="table table-striped ">
+        {% for task in tasks %}
+            <tr>
+                <th>Task {{ task.task_id }}</th>
+                <td>{{ task.start_date }} ~ {{ task.end_date }}</td>
+                <td><a href="/task/{{ task.task_id }}">{{ task.description }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <button class="form-control" onclick="show_task_form()">New Task</button>
+    <form method="post" action="" id="new_task" hidden>
+        <div class="form-group">
+            {% for field in task_form %}
+                {{ field }}
+            {% endfor %}
+        </div>
+
+    </form>
+    {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        function show_task_form() {
+            var new_task_form = $('#new_task');
+            if (new_task_form.is(':hidden')){
+                new_task_form.attr('hidden', false);
+            }
+            else{
+                new_task_form.attr('hidden', true);
+            }
+        }
+    </script>
+
+{% endblock %}
