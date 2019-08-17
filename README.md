@@ -14,6 +14,6 @@
 
 ## app 部分截图
 
-![Login Page]('./images/login_page.png')
-![Sign up]('./images/sign_up_page.png')
-![Visualize data]('./images/data_visualized.png)
+![Login Page](images/login_page.png)
+![Sign up](/images/sign_up_page.png)
+![Visualize data](images/data_visualized.png)
