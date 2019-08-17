@@ -15,8 +15,13 @@
 ## app 部分截图
 
 + Login page
-    ![Login Page](images/login_page.png)
+
+    - ![Login Page](images/login_page.png)
+    
 + Sign up page
+
     ![Sign up](/images/sign_up_page.png)
+    
 + data visualized page
+
     ![Visualize data](images/data_visualized.png)
